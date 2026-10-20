@@ -16,3 +16,10 @@ print(width)
 print(height)
 
 #실습 
+temp = 25  # 온도(섭씨)
+count = 3  # 센서 개수
+
+# temp = 100
+
+print(temp)
+print(count)
