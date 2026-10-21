@@ -30,3 +30,8 @@ print(temp)
 score = 90
 print(score)
 
+print(2 + 3)
+print("2" + "3")
+print("10" + "20")
+print(2 + 3)
+print("2" + "3")
