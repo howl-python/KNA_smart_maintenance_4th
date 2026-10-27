@@ -11,10 +11,33 @@
  # 처음부터 조건이 거짓이면 한번도 실행되지않는다
 
 #  #실습 1
-start = 1
-goal = 7
-while start != goal:
-    start += 1
-    print(start)
+# start = 1
+# goal = 7
+# while start != goal:
+#     start += 1
+#     print(start)
 
-print("정답입니다!!")
+#break - 반복 도중에 완전히 멈추기
+# for i in range(1, 11):
+#     if i == 5:
+#         break   # 5를 만나면 반복 즉시 종료
+#     print(i)
+
+# for i in  range(1, 7):
+#     if i % 2 == 0:
+#         continue
+#     print(i)
+
+#실습 2
+count = int(input("횟수: "))
+found = False
+for i in range(count):
+    v = int(input("측정값: "))
+    if v > 80:
+        found = True
+        break
+if found:
+    print("발견")
+else:
+    print("없음")
+
