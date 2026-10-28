@@ -58,3 +58,4 @@ for name, value, (x, y) in sensors:
     print(name,(x,y))
     if x <= 5:
         print(name)
+
