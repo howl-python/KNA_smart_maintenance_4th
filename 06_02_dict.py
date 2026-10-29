@@ -132,15 +132,16 @@ if item in inventory:
 # print(sensor_dict)
 
 #실습 8 
-measure = {"온도": 90.0, "압력": 101.0}
-limits = {"온도": 80.0, "압력": 100.0}
-avg = sum(measure.values()) / len(measure)
-print("평균",round(avg,1))
-warning = set()
-for name , value in measure.items():
-    if value > limits[name]:
-        warning.add(name)
-print("위험센서:", sorted(warning))
+# measure = {"온도": 90.0, "압력": 101.0}
+# limits = {"온도": 80.0, "압력": 100.0}
+# avg = sum(measure.values()) / len(measure)
+# print("평균",round(avg,1))
+# warning = set()
+# for name , value in measure.items():
+#     if value > limits[name]:
+#         warning.add(name)
+# print("위험센서:", sorted(warning))
+
 
 
 

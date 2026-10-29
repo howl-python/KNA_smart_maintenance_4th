@@ -11,8 +11,3 @@
 # # 호출 : 함수이름 적고 괄호 붙이기
 # greet()
 
-#실습 1
-def check():
-    print("점검을 시작합니다")
-check()
-# check()
