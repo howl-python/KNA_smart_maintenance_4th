@@ -50,19 +50,33 @@ FILE = "data/08_press.csv"
 
 #csv.wrtier
 # import csv
-# with open("data/08_summery.csv", "w", uncoding="utf-8", newline="") as f:
+# with open("data/08_summery.csv", "w", encoding="utf-8", newline="") as f:
 #     writer = csv.writer(f)
 #     writer.writerow(["설비ID", "상태"])
-#     writer.writerow("PRESS-01, 1")
-#     writer.writerow("PRESS-02, 2")
+#     writer.writerow(["PRESS-01", 1])
+#     writer.writerow(["PRESS-02", 2])
 # with open("data/08_summery.csv", "r", encoding="utf-8") as f:
 #     reader = csv.reader(f)
 #     for row in reader:
 #         print(row)
 #실습 5
-import csv
-with open("data/08_summery.csv", "w", encoding="utf-8", newline="") as f:
+# import csv
+# with open("data/08_summery.csv", "w", encoding="utf-8", newline="") as f:
+#     writer = csv.writer(f)
+#     writer.writerow(["설비ID", "상태"])
+#     writer.writerow(["PRESS-01", 1])
+#     writer.writerow(["PRESS-02", 2])
+
+#실습 6
+rows = []
+with open(FILE, "r", encoding="utf-8") as f:
+    reader = csv.reader(f)
+    header = next(reader)
+    for row in reader:
+        if float(row[4]) > 90:
+            rows.append(row)
+with open("data/08_press_over90.csv", "w", encoding="utf-8", newline="") as f:
     writer = csv.writer(f)
-    writer.writerow(["설비ID", "상태"])
-    writer.writerow(["PRESS-01", 1])
-    writer.writerow(["PRESS-02", 2])
+    writer.writerow(header)
+    writer.writerows(rows)
+print("저장된 행 수:", len(rows))
