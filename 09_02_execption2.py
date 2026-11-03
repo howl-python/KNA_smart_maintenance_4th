@@ -80,16 +80,30 @@
 # print(f"합계: {round(total, 2)} / 유효: {valid} / 제외: {skipped}")
         
 # 실습 4
-names = ["data/09_ict_inspection.csv", "data/09_없는파일.csv", "data/09_ict_inspection_dirty.csv"]
-done = 0
-for name in names:
-    try:
-        with open(name, "r", encoding="utf-8") as f:
-            rows = f.readlines()[1:]
-            print(f"{name} 행 수: {len(rows)}")
-            done += 1
-    except FileNotFoundError:
-        print("없는 파일입니다")
-        continue
-print("처리한 파일:", done)
+# names = ["data/09_ict_inspection.csv", "data/09_없는파일.csv", "data/09_ict_inspection_dirty.csv"]
+# done = 0
+# for name in names:
+#     try:
+#         with open(name, "r", encoding="utf-8") as f:
+#             rows = f.readlines()[1:]
+#             print("읽기 성공:" ,name, len(rows), "행")
+#             done += 1
+#     except FileNotFoundError:
+#         print("없는 파일입니다")
+#         continue
+# print("처리한 파일:", done)
 
+# 실습 5
+def check_value(text, lo=0.0, hi=5000.0):
+    v = float(text)
+    if v < lo:
+        raise ValueError
+
+    if v > hi:
+        raise ValueError
+    return v
+for t in ["128.5", "결측", "-999"]:
+   try:
+      print("통과", check_value(t))
+   except ValueError as e:
+      print("제외:", e)
