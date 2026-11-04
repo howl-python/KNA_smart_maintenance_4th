@@ -130,12 +130,11 @@ def save_report(path, total_rows, valid_rows, rejected, stats):
 def verify_part_counts(valid_rows):
     """[실습 6] 유효 행을 부품별로 다시 묶고 합계가 전체와 같은지 확인."""
     by_part, dropped = group_by_part(valid_rows)
+    by_valid, _ = group_by_part(valid_rows)
     check_sum = 0
-    for part, part_rows in by_part.items():
-          stats = calc_stats(part_rows, 2)
-          check_sum += stats["count"]
-    return check_sum == len(valid_rows)
-print()
+    for v in sorted(by_valid):
+        check_sum += calc_stats(by_valid[v], 2)["count"]
+    print(check_sum == len(valid_rows))
     # TODO: group_by_part(valid_rows)를 재사용하고
     # 각 부품에 calc_stats(part_rows, 2)를 적용해 건수를 합산하세요.
     
@@ -175,3 +174,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
