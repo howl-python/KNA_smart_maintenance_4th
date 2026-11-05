@@ -113,10 +113,3 @@ temp = np.array
 # restored_data = new_data.flatten()
 # print(restored_data)
 
-import numpy as np
-
-# 인덱싱, 슬라이싱
-a = np.array(0,1,2,3,4)
-print(a[0], a[-1])
-print(a[1:4])
-print(a[::2])
