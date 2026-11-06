@@ -31,7 +31,7 @@ print('banana'.find('t')) # 못찾을경우 -1
 # print('정상'in word)
 
 #실습 3
-word = 'sensor-01-temp'
+word = '`s`ensor-01-temp'
 print('sensor-01-temp'.count('-'))
 
 #실습 4
