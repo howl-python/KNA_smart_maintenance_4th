@@ -61,7 +61,7 @@ df = pd.read_csv(F)
 # print(df.head())
 
 #
-# 실습 4
-dt = pd.read_csv(FS,sep=";",encoding="utf-8",usecols=[2, 3, 4],nrows=50)
-print(dt.shape)
-print(dt.head())
+# # 실습 4
+# dt = pd.read_csv(FS,sep=";",encoding="utf-8",usecols=[2, 3, 4],nrows=50)
+# print(dt.shape)
+# print(dt.head())
