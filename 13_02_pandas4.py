@@ -2,8 +2,20 @@ import pandas as pd
 
 F_SHOT = 'data/13_diecasting_shot.csv'
 
-# 조건 필터링과 정렬
-df = pd.read_csv(F_SHOT)
+log = pd.read_csv(F_SHOT)
+#실습 3
+log_first = log.iloc[:100].reset_index(drop=True)
+log_second = log.iloc[100:].reset_index(drop=True)
+
+log_concat = pd.concat([log_first, log_second])
+print("합친 모양:", log_concat.shape)
+
+print((log_concat.index == 0).sum())
+
+log_concat_fixed = pd.concat([log_first, log_second], ignore_index=True)
+
+print("마지막 인덱스 번호:", log_concat_fixed.index[-1])
+
 # print(df.shape)
 
 # # 배열에서 하던 것
@@ -101,13 +113,13 @@ df = pd.read_csv(F_SHOT)
 # print(x.shape )       # (20, 9)
 
 #실습 3
-quality = df['품질등급'].isin(['주의', '불량'])
-print(quality.sum())
-print("검사:", len(df[df['비스킷두께'].between(10, 16)]))
-cc = df['설비ID'].str.contains('A')
-print("글자:", cc.sum())
-cc2 = df['설비ID'] == 'DIE-A-01'
-print("일치:", cc2.sum())
+# quality = df['품질등급'].isin(['주의', '불량'])
+# print(quality.sum())
+# print("검사:", len(df[df['비스킷두께'].between(10, 16)]))
+# cc = df['설비ID'].str.contains('A')
+# print("글자:", cc.sum())
+# cc2 = df['설비ID'] == 'DIE-A-01'
+# print("일치:", cc2.sum())
 
 #실습 4
 # print("전체 데이터 크기:", df.shape)
@@ -126,4 +138,4 @@ print("일치:", cc2.sum())
 # print(thre["샷"].head(3).tolist())
 # print(thre.head(5))
 # good = df[df['품질등급'] != '양품']
-# print(good['비스킷두께'].isna().sum())
+# # print(good['비스킷두께'].isna().sum())
